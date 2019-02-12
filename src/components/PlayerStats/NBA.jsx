@@ -28,7 +28,7 @@ class NBA extends React.Component {
               return(
                 p.is_starter
                   ? <tr key={index} className="starter">
-                      <td>{p.first_name.charAt(0) + '. ' + p.last_name}</td>
+                      <td className="player-name">{p.first_name.charAt(0) + '. ' + p.last_name}</td>
                       <td>{p.minutes}</td>
                       <td>{p.points}</td>
                       <td>{p.field_goals_made}</td>
@@ -44,7 +44,7 @@ class NBA extends React.Component {
               return(
                 !p.is_starter
                   ? <tr key={index}>
-                      <td>{p.first_name.charAt(0) + '. ' + p.last_name}</td>
+                      <td className="player-name">{p.first_name.charAt(0) + '. ' + p.last_name}</td>
                       <td>{p.minutes}</td>
                       <td>{p.points}</td>
                       <td>{p.field_goals_made}</td>

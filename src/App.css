@@ -18,13 +18,29 @@ table {
 }
 
 th {
-  background-color: rgb(236, 236, 236);
+  background-color: rgb(58, 58, 58);
+  color: whitesmoke;
 }
 
 th, td {
   border: 1px solid rgb(0, 0, 0);
+  min-width: 35px;
   width: 50px;
   height: 35px;
+}
+
+.player-name {
+  font-weight: 600;
+}
+
+.boxscore {
+  overflow-x: auto;
+}
+
+.boxscore-hr {
+  width: 80%;
+  margin-top: 30px;
+  margin-bottom: 0;
 }
 
 .statsheet {
@@ -39,7 +55,7 @@ th, td {
 }
 
 .starter {
-  background-color: rgb(221, 235, 240);
+  background-color: rgb(226, 226, 226);
 }
 
 .player-stats-nba {
@@ -48,6 +64,11 @@ th, td {
 
 .player-stats-mlb {
   font-size: 14px;
+}
+
+.player-stats-mlb>div {
+  width: fit-content;
+  margin: 0 auto;
 }
 
 .player-stats-nba>table>tbody>tr>th, .player-stats-nba>table>tbody>tr>td {
@@ -60,4 +81,81 @@ th, td {
   padding: 0 6px;
   width: fit-content;
   min-width: 35px;
+}
+
+.information-container {
+  text-align: left;
+  clear: both;
+  width: 35%;
+  margin: 20px auto;
+  padding: 20px;
+  border: 1px solid black;
+  border-radius: 4px;
+}
+
+.information-container h2 {
+  text-align: center;
+  margin-top: 0;
+}
+
+.information-container h3 {
+  margin-top: 0;
+  margin-bottom: 0;
+  font-weight: 500;
+}
+
+.information-container ul {
+  margin: 0;
+  width: fit-content;
+}
+
+@media only screen and (max-width: 1020px) {
+
+  .boxscore-container h1 {
+    width: 85%;
+    margin: 20px auto;
+  }
+
+  .player-stats-col {
+    float: none;
+    width: 85%;
+    margin: 0 auto;
+    /* border: 1px solid black; */
+  }
+
+  .boxscore {
+    width: 85%;
+    margin: 0 auto;
+  }
+
+  .player-stats-mlb>div {
+    width: 100%;
+    overflow-x: auto;
+  }
+
+  .player-stats-nba {
+    width: 100%;
+    overflow-x: auto;
+  }
+
+  tr {
+    min-width: 40px;
+  }
+
+}
+
+@media only screen and (max-width: 780px) {
+
+  .preview-container {
+    width: 80%;
+  }
+
+}
+
+@media only screen and (max-width: 600px) {
+
+  .information-container {
+    width: 75%;
+  }
+
 }
