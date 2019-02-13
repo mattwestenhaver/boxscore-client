@@ -6,8 +6,33 @@
 .preview-container {
   width: 55%;
   margin: 10px auto;
-  border: 1px solid black;
+  border: 1px solid rgb(48, 48, 48);
   border-radius: 4px;
+  background-color: rgb(90, 90, 90);
+}
+
+.preview-container h3 {
+  color: whitesmoke;
+  margin-bottom: 2px;
+  text-decoration: underline;
+}
+
+/* .preview-container h2 {
+  margin-top: 8px;
+} */
+
+.preview-container a {
+  text-decoration: none;
+  color: whitesmoke;
+}
+
+.preview-container a:hover {
+  text-decoration: underline;
+}
+
+.preview-score {
+  margin-top: 0;
+  text-decoration: none!important;
 }
 
 table {

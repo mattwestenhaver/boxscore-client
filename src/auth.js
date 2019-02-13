@@ -22,6 +22,13 @@ class AuthClient {
       })
   }
 
+  initializeDB() {
+    return this.request({ method: "Get", url: '/games/init' })
+      .then(response => {
+        return response
+      })
+  }
+
   newGame(gameData) {
     return this.request({ method: "Post", url: "/games", data: gameData }).then(response => {
       return response

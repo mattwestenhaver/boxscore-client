@@ -13,9 +13,21 @@ class Preview extends React.Component {
 
   getGames() {
     auth.getAllGames().then(response => {
-      this.setState({
-        games: response
-      })
+      if(response.length === 2) {
+        this.setState({
+          games: response
+        })
+      } else {
+        auth.initializeDB().then(response2 => {
+          if(response2.data.success) {
+            auth.getAllGames().then(response3 => {
+              this.setState({
+                games: response3
+              })
+            })
+          }
+        })
+      }
     })
   }
 
@@ -26,13 +38,16 @@ class Preview extends React.Component {
   render() {
     return (
       <div>
+        <h1>Recent Games</h1>
         {this.state.games.map((g, index) => {
           return(
-            <Link key={index} to={`/games/${g._id}`}>
-              <div className='preview-container'>
-                <h2>{g.awayTeam[0].team.full_name} vs {g.homeTeam[0].team.full_name}</h2>
-              </div>
-            </Link>
+            <div key={index} className='preview-container'>
+              {/* <h3>{g.gameInfo[0].event_information.status === 'completed' ? "Final" : g.gameInfo[0].event_information.status}</h3>
+              <h3 className='preview-score'>{g.awayTeam[0].period_scores.reduce((a, b) => a + b, 0)} - {g.homeTeam[0].period_scores.reduce((a, b) => a + b, 0)}</h3> */}
+              <Link to={`/games/${g._id}`}>
+                  <h2>{g.awayTeam[0].team.full_name} vs {g.homeTeam[0].team.full_name}</h2>
+              </Link>
+            </div>
           )
         })}
       </div>
