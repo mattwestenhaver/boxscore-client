@@ -41,13 +41,35 @@ class Preview extends React.Component {
         <h1>Recent Games</h1>
         {this.state.games.map((g, index) => {
           return(
-            <div key={index} className='preview-container'>
-              {/* <h3>{g.gameInfo[0].event_information.status === 'completed' ? "Final" : g.gameInfo[0].event_information.status}</h3>
-              <h3 className='preview-score'>{g.awayTeam[0].period_scores.reduce((a, b) => a + b, 0)} - {g.homeTeam[0].period_scores.reduce((a, b) => a + b, 0)}</h3> */}
-              <Link to={`/games/${g._id}`}>
-                  <h2>{g.awayTeam[0].team.full_name} vs {g.homeTeam[0].team.full_name}</h2>
-              </Link>
-            </div>
+            <Link to={`/games/${g._id}`} key={index} className='preview-container'>
+              <table>
+                <thead>
+                  <tr>
+                    <th colSpan="2">
+                      <h3>{g.gameInfo[0].event_information.status === 'completed' ? "Final Score" : g.gameInfo[0].event_information.status}</h3>
+                    </th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <td className='team-name'>
+                      <h2>{g.awayTeam[0].team.full_name}</h2>
+                    </td>
+                    <td>
+                      <h2>{g.awayTeam[0].period_scores.reduce((a, b) => a + b, 0)}</h2>
+                    </td>
+                  </tr>
+                  <tr>
+                    <td className='team-name'>
+                      <h2>{g.homeTeam[0].team.full_name}</h2>
+                    </td>
+                    <td>
+                      <h2>{g.homeTeam[0].period_scores.reduce((a, b) => a + b, 0)}</h2>
+                    </td>
+                  </tr>
+                </tbody>
+              </table>
+            </Link>
           )
         })}
       </div>

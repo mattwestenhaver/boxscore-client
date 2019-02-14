@@ -5,6 +5,8 @@ import { NavLink } from 'react-router-dom'
 import Statsheet from './Statsheet.jsx'
 import EventInfo from './EventInfo.jsx'
 
+import backIcon from '../images/back_icon.png'
+
 class Boxscore extends React.Component {
 
   constructor(props) {
@@ -34,9 +36,14 @@ class Boxscore extends React.Component {
     return(
       this.state.game
       ? <div className='boxscore-container'>
-          <NavLink to='/scores'>All Scores</NavLink>
-          <h1>{game.awayTeam[0].team.full_name} vs {game.homeTeam[0].team.full_name}</h1>
-          <h3>{game.gameInfo[0].event_information.status === 'completed' ? "Final Score" : game.gameInfo[0].event_information.status}</h3>
+          <div className='back'>
+            <NavLink to='/scores'>
+              <img src={backIcon} alt='back-icon' />
+              <h3>All Scores</h3>
+            </NavLink>
+          </div>
+          <h1>{game.awayTeam[0].team.full_name} @ {game.homeTeam[0].team.full_name}</h1>
+          <h3>{game.gameInfo[0].event_information.status === 'completed' ? "Final" : game.gameInfo[0].event_information.status}</h3>
           <div className='boxscore'>
             <table>
               <tbody>
@@ -57,7 +64,7 @@ class Boxscore extends React.Component {
                 </tr>
 
                 <tr>
-                  <td className="player-name">{game.awayTeam[0].team.abbreviation}</td>
+                  <td className="team-name">{game.awayTeam[0].team.abbreviation}</td>
                   {game.awayTeam[0].period_scores.map((p, index) => {
                     return (
                       <td key={index}>{p}</td>
@@ -73,7 +80,7 @@ class Boxscore extends React.Component {
                 </tr>
 
                 <tr>
-                  <td className="player-name">{game.homeTeam[0].team.abbreviation}</td>
+                  <td className="team-name">{game.homeTeam[0].team.abbreviation}</td>
                   {game.homeTeam[0].period_scores.map((p, index) => {
                     return (
                       <td key={index}>{p}</td>

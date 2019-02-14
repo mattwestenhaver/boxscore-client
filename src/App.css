@@ -1,38 +1,49 @@
+@import url('https://fonts.googleapis.com/css?family=Lato');
+
+
 .App {
   text-align: center;
   padding-top: 20px;
 }
 
+body {
+  background-color: whitesmoke;
+  font-family: 'Lato', sans-serif;
+}
+
 .preview-container {
-  width: 55%;
-  margin: 10px auto;
-  border: 1px solid rgb(48, 48, 48);
-  border-radius: 4px;
-  background-color: rgb(90, 90, 90);
+  text-decoration: none;
+}
+
+.preview-container>table {
+  width: 40%;
+  margin-bottom: 30px;
+  opacity: 0.85;
+  transition: transform .2s;
+}
+
+.preview-container>table:hover {
+  transform: scale(1.05);
+  opacity: 1.0;
+}
+
+.preview-container th {
+  background-color: rgb(22, 22, 80);
+}
+
+/* .preview-container th, .preview-container td {
+  height: 30px;
+} */
+
+.preview-container h2 {
+  color: black;
+  margin-top: 10px;
+  margin-bottom: 10px;
 }
 
 .preview-container h3 {
-  color: whitesmoke;
-  margin-bottom: 2px;
-  text-decoration: underline;
-}
-
-/* .preview-container h2 {
-  margin-top: 8px;
-} */
-
-.preview-container a {
-  text-decoration: none;
-  color: whitesmoke;
-}
-
-.preview-container a:hover {
-  text-decoration: underline;
-}
-
-.preview-score {
-  margin-top: 0;
-  text-decoration: none!important;
+  margin-top: 10px;
+  margin-bottom: 10px;
 }
 
 table {
@@ -43,19 +54,54 @@ table {
 }
 
 th {
-  background-color: rgb(58, 58, 58);
+  background-color: rgb(22, 22, 80);
   color: whitesmoke;
 }
 
 th, td {
   border: 1px solid rgb(0, 0, 0);
-  min-width: 35px;
-  width: 50px;
+  min-width: 45px;
+  /* width: 50px; */
   height: 35px;
+  padding: 0 4px;
+}
+
+.team-name {
+  font-weight: 600;
+  background-color: lightgray;
 }
 
 .player-name {
   font-weight: 600;
+}
+
+.player-stats-mlb .player-name {
+  background-color: lightgray;
+}
+
+.back {
+  width: 120px;
+  margin-left: 40px;
+}
+
+.back>a {
+  text-decoration: none;
+  color: black;
+}
+
+.back>a:hover {
+  text-decoration: underline;
+}
+
+.boxscore-container img {
+  float: left;
+  width: 20px;
+}
+
+
+.boxscore-container>a>h3 {
+  float: right;
+  line-height: 30px;
 }
 
 .boxscore {
@@ -79,6 +125,10 @@ th, td {
   /* border: 1px solid black; */
 }
 
+.player-stats-col>h3 {
+  font-size: 20px;
+}
+
 .starter {
   background-color: rgb(226, 226, 226);
 }
@@ -89,6 +139,11 @@ th, td {
 
 .player-stats-mlb {
   font-size: 14px;
+}
+
+.player-stats-mlb>h4 {
+  margin-top: 20px;
+  margin-bottom: 10px;
 }
 
 .player-stats-mlb>div {
@@ -103,29 +158,41 @@ th, td {
 }
 
 .player-stats-mlb>table>tbody>tr>th, .player-stats-mlb>table>tbody>tr>td {
-  padding: 0 6px;
+  padding: 0 7px!important;
   width: fit-content;
-  min-width: 35px;
+  min-width: 45px;
 }
 
 .information-container {
   text-align: left;
   clear: both;
   width: 35%;
-  margin: 20px auto;
-  padding: 20px;
+  margin: 40px auto;
   border: 1px solid black;
   border-radius: 4px;
+}
+
+.information-container>.header {
+  width: 100%;
+  background-color: rgb(22, 22, 80);
+  color: whitesmoke;
+  padding-top: 20px;
+  padding-bottom: 20px;
+}
+
+.information-container>.content {
+  padding: 20px;
 }
 
 .information-container h2 {
   text-align: center;
   margin-top: 0;
+  margin-bottom: 0;
 }
 
 .information-container h3 {
   margin-top: 0;
-  margin-bottom: 0;
+  margin-bottom: 5px;
   font-weight: 500;
 }
 
@@ -134,7 +201,7 @@ th, td {
   width: fit-content;
 }
 
-@media only screen and (max-width: 1020px) {
+@media only screen and (max-width: 1100px) {
 
   .boxscore-container h1 {
     width: 85%;
@@ -171,7 +238,7 @@ th, td {
 
 @media only screen and (max-width: 780px) {
 
-  .preview-container {
+  .preview-container table {
     width: 80%;
   }
 

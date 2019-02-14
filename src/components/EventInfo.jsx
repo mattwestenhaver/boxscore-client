@@ -7,8 +7,10 @@ class EventInfo extends React.Component {
 
     return (
       <div className='information-container'>
-        <h2>Game Information</h2><hr />
-        <div>
+        <div className='header'>
+          <h2>Game Information</h2>
+        </div>
+        <div className='content'>
           <h3>{game.gameInfo[0].event_information.season_type === 'regular' ? 'Regular Season Game' : 'Post-Season Game'}</h3>
           <h3>Location: {game.gameInfo[0].event_information.site.city + ', ' + game.gameInfo[0].event_information.site.state} </h3>
           <h3>Stadium: {game.gameInfo[0].event_information.site.name}</h3>
