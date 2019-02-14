@@ -37,7 +37,7 @@ class Boxscore extends React.Component {
       this.state.game
       ? <div className='boxscore-container'>
           <div className='back'>
-            <NavLink to='/scores'>
+            <NavLink to='/'>
               <img src={backIcon} alt='back-icon' />
               <h3>All Scores</h3>
             </NavLink>

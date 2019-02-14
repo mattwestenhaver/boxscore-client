@@ -11,7 +11,7 @@ class App extends Component {
         <div className="App">
           {/* <Link to='/mlb'>MLB</Link>
           <Link to='/nba'>NBA</Link> */}
-          <Route path='/scores' component={Preview} />
+          <Route exact path='/' component={Preview} />
           <Route path='/games/:id' render={(props) => {
             return <Boxscore {...props}/>
           }} />

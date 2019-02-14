@@ -31,10 +31,6 @@ body {
   background-color: rgb(22, 22, 80);
 }
 
-/* .preview-container th, .preview-container td {
-  height: 30px;
-} */
-
 .preview-container h2 {
   color: black;
   margin-top: 10px;
@@ -61,7 +57,6 @@ th {
 th, td {
   border: 1px solid rgb(0, 0, 0);
   min-width: 45px;
-  /* width: 50px; */
   height: 35px;
   padding: 0 4px;
 }
@@ -122,7 +117,6 @@ th, td {
   float: left;
   width: 47%;
   margin: 2% 1.4%;
-  /* border: 1px solid black; */
 }
 
 .player-stats-col>h3 {
@@ -212,7 +206,6 @@ th, td {
     float: none;
     width: 85%;
     margin: 0 auto;
-    /* border: 1px solid black; */
   }
 
   .boxscore {
