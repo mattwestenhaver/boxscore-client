@@ -1,6 +1,8 @@
 #Boxscore React Client
 ---
 
+### Client is deployed on [here](https://boxscore-client-mwestenhaver.herokuapp.com/) on heroku
+
 ## Steps to run
 - Fork the GitHub repository
 - Clone the GitHub repository to your computer
