@@ -4,7 +4,7 @@ class AuthClient {
 
   constructor() {
     this.request = axios.create({
-      baseURL: 'http://localhost:3001/'
+      baseURL: 'https://boxscore-server-mwestenhaver.herokuapp.com'
     })
   }
 
